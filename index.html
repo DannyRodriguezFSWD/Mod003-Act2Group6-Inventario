@@ -4,27 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"     href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Inventario</title>
 </head>
 <body>
+    <!--==========Inicia Servicios================-->
+    <section class="container-fluid" id="section-productos">
+        <div class="row w-75 mx-auto my-5 servicio-fila">
+            <div class="col-lg-6 cl-md-12 col-sm-12 d-flex my-5 icono-wrap">
+                <img src="./assets/image/nike1.webp" alt="desarrollo" width="180" height="160">
+                <div>
+                    <h3 class="fs-5 mt-4 px-4 pb-1">LeBron 19</h3>
+                    <p class="px-4">SKU: DQ7548-600</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 cl-md-12 col-sm-12 d-flex my-5 icono-wrap">
+                <img src="./assets/image/nike2.webp" alt="desarrollo" width="180" height="160">
+                <div>
+                    <h3 class="fs-5 mt-4 px-4 pb-1">Luka 1 "Next Nature"</h3>
+                    <p class="px-4">SKU: DR9830-074</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 cl-md-12 col-sm-12 d-flex my-5 icono-wrap">
+                <img src="./assets/image/nike3.webp" alt="desarrollo" width="180" height="160">
+                <div>
+                    <h3 class="fs-5 mt-4 px-4 pb-1">Nike Air Max Alpha Trainer 5</h3>
+                    <p class="px-4">SKU: DM0829-002</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 cl-md-12 col-sm-12 d-flex my-5 icono-wrap">
+                <img src="./assets/image/nike4.webp" alt="desarrollo" width="180" height="160">
+                <div>
+                    <h3 class="fs-5 mt-4 px-4 pb-1">Nike SuperRep Go 3</h3>
+                    <p class="px-4">SKU: DH3394-005</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--==========Termina Servicios================-->
+
     <section class="formulario">
         <form id="product-form">
-            <div class="form-group">
-            <label for="prodName">
-                <input type="text" id="prodName" placeholder="Incerte el Nombre del producto">
-            </label>
-            <label for="imgUrlProd">
-                <input type="text" id="imgUrlProd" placeholder="Inserte el URL de la imagen del producto">
-            </label>
-            <label for="prodDescrip">
-                <input type="text" id="prodDescrip" placeholder="Inserte la descripción del producto">
-            </label>
-            <input type="submit" value="Agregar" id="addProduct">
+            <div class="form-group mb-3">
+              <label for="prodName"></label>
+              <input type="text" id="prodName" placeholder="# de SKU">
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="imgUrlProd"></label>
+              <input type="text" id="imgUrlProd" placeholder="URL de la imagen del producto">
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="prodDescrip"></label>
+              <input type="text" id="prodDescrip" placeholder="Inserte la descripción del producto">
+            </div>
+
+            <div class="form-group mb-3">
+                <button type="submit" value="Agregar" id="addProduct" class="btn btn-primary ">Agregar</button>
             </div>
         </form>
 
     </section>
-    <section id="productsList">
+    <section id="productsList" class="text-center mb-4">
         
         
     </section>
