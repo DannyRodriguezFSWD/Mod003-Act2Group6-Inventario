@@ -2,9 +2,19 @@ window.addEventListener('DOMContentLoaded', function() {
     const addProduct = document.querySelector("#addProduct")
     const prodName = document.querySelector("#prodName")
     const colorProd = document.querySelector("#prodcolor")
-    const prodDescrip = document.querySelector("#prodDescrip")
+    //const prodDescrip = document.querySelector("#prodDescrip")
     const productsList = document.querySelector("#productsList")
     let prods = ""
+
+    const allInputs = document.querySelectorAll('input')
+
+    allInputs.forEach(input => {
+      input.addEventListener('change', function(event) {
+        if (event.target.value !== "") {
+          input.classList.remove('is-invalid')
+        }
+      })
+    })
 
 
 
@@ -14,49 +24,53 @@ window.addEventListener('DOMContentLoaded', function() {
             event.preventDefault()
 
         const producto = prodName.value
-        var imagen = "" /*= imgUrlProd.value*/
-        const descripcion = prodDescrip.value
+        let imagen = "" /*= imgUrlProd.value*/
+        let descripcion = ""//prodDescrip.value
         const color = colorProd.value
 
-        var hoy = new Date();
-        var fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
-        var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
-        var fechaYHora = fecha + ' ' + hora;
+        let hoy = new Date();
+        let fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
+        let hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
+        let fechaYHora = fecha + ' ' + hora;
 
         
         if (prodName.value == "DQ7548-600"){
             imagen = "./assets/image/nike1.webp";
+            descripcion ="LeBron 19";
         } else if (prodName.value == "DR9830-074"){
             imagen = "./assets/image/nike2.webp";
+            descripcion ="Luka 1 Next Nature";
         } else if (prodName.value == "DM0829-002"){
             imagen = "./assets/image/nike3.webp";
+            descripcion ="Nike Air Max Alpha Trainer 5";
         } else if (prodName.value == "DH3394-005"){
             imagen = "./assets/image/nike4.webp";
+            descripcion ="Nike SuperRep Go 3";
         }
 
         console.log(imagen)
-        /*if (producto === "") {
+        if (producto === "") {
             prodName.classList.add('is-invalid')
           }
       
-          if (imagen === "") {
-            imgUrlProd.classList.add('is-invalid')
+          if (color === "") {
+            colorProd.classList.add('is-invalid')
           }
     
-          if (descripcion === "") {
-            prodDescrip.classList.add('is-invalid')
-          }
+        //   if (descripcion === "") {
+        //     prodDescrip.classList.add('is-invalid')
+        //   }
       
           if (producto !== "" && imagen !== "" && descripcion !== "") {
             prodName.classList.remove('is-invalid')
-            imgUrlProd.classList.remove('is-invalid')
-            prodDescrip.classList.remove('is-invalid')*/
-        
+            colorProd.classList.remove('is-invalid')
+           //prodDescrip.classList.remove('is-invalid')
+          }
 
 
-            const productCard = `<div class="prodCard">
-                <figure><img src="${imagen}" class="imgsize" alt=""></figure>
-                <div class="cardContetnt">
+            const productCard = `<div class="card m-1">
+               <img src="${imagen}" class="card-img-top"" alt="">
+                <div class="card-body">
                     <h2 class="prodName">${producto}</h2>
                     <p class="prodDesc">${descripcion}</p>
                     <p class="prodcolor">${color}</p>
@@ -69,7 +83,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
             prodcolor.value = ""
             prodName.value = ""
-            prodDescrip.value = ""
+            //prodDescrip.value = ""
           
 
 
