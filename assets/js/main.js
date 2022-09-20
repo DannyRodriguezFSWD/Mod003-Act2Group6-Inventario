@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const colorProd = document.querySelector("#prodcolor")
     //const prodDescrip = document.querySelector("#prodDescrip")
     const productsList = document.querySelector("#productsList")
+    const mesesProd = document.querySelector("#mesesProd")
     let prods = ""
 
     const allInputs = document.querySelectorAll('input')
@@ -27,6 +28,7 @@ window.addEventListener('DOMContentLoaded', function() {
         let imagen = "" /*= imgUrlProd.value*/
         let descripcion = ""//prodDescrip.value
         const color = colorProd.value
+        const meses = mesesProd.value
 
         let hoy = new Date();
         let fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
@@ -56,12 +58,16 @@ window.addEventListener('DOMContentLoaded', function() {
           if (color === "") {
             colorProd.classList.add('is-invalid')
           }
+
+          if (meses === "") {
+            mesesProd.classList.add('is-invalid')
+          }
     
         //   if (descripcion === "") {
         //     prodDescrip.classList.add('is-invalid')
         //   }
       
-          if (producto !== "" && imagen !== "" && descripcion !== "") {
+          if (producto !== "" && imagen !== "" && descripcion !== "" && meses !== "") {
             prodName.classList.remove('is-invalid')
             colorProd.classList.remove('is-invalid')
            //prodDescrip.classList.remove('is-invalid')
@@ -74,6 +80,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     <h2 class="prodName">${producto}</h2>
                     <p class="prodDesc">${descripcion}</p>
                     <p class="prodcolor">${color}</p>
+                    <p class="mesesProd">${meses}</p>
                     <p>Fecha: ${fechaYHora}</p>
                 </div>
               </div>`
@@ -83,6 +90,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
             prodcolor.value = ""
             prodName.value = ""
+            mesesProd.value = ""
             //prodDescrip.value = ""
           
 
