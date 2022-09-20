@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', function() {
     const addProduct = document.querySelector("#addProduct")
     const prodName = document.querySelector("#prodName")
-    const imgUrlProd = document.querySelector("#imgUrlProd")
+    const colorProd = document.querySelector("#prodcolor")
     const prodDescrip = document.querySelector("#prodDescrip")
     const productsList = document.querySelector("#productsList")
     let prods = ""
@@ -14,10 +14,28 @@ window.addEventListener('DOMContentLoaded', function() {
             event.preventDefault()
 
         const producto = prodName.value
-        const imagen = imgUrlProd.value
+        var imagen = "" /*= imgUrlProd.value*/
         const descripcion = prodDescrip.value
+        const color = colorProd.value
 
-        if (producto === "") {
+        var hoy = new Date();
+        var fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
+        var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
+        var fechaYHora = fecha + ' ' + hora;
+
+        
+        if (prodName.value == "DQ7548-600"){
+            imagen = "./assets/image/nike1.webp";
+        } else if (prodName.value == "DR9830-074"){
+            imagen = "./assets/image/nike2.webp";
+        } else if (prodName.value == "DM0829-002"){
+            imagen = "./assets/image/nike3.webp";
+        } else if (prodName.value == "DH3394-005"){
+            imagen = "./assets/image/nike4.webp";
+        }
+
+        console.log(imagen)
+        /*if (producto === "") {
             prodName.classList.add('is-invalid')
           }
       
@@ -32,7 +50,7 @@ window.addEventListener('DOMContentLoaded', function() {
           if (producto !== "" && imagen !== "" && descripcion !== "") {
             prodName.classList.remove('is-invalid')
             imgUrlProd.classList.remove('is-invalid')
-            prodDescrip.classList.remove('is-invalid')
+            prodDescrip.classList.remove('is-invalid')*/
         
 
 
@@ -41,16 +59,18 @@ window.addEventListener('DOMContentLoaded', function() {
                 <div class="cardContetnt">
                     <h2 class="prodName">${producto}</h2>
                     <p class="prodDesc">${descripcion}</p>
+                    <p class="prodcolor">${color}</p>
+                    <p>Fecha: ${fechaYHora}</p>
                 </div>
               </div>`
         
             prods += productCard
             productsList.innerHTML = prods
 
-            imgUrlProd.value = ""
+            prodcolor.value = ""
             prodName.value = ""
             prodDescrip.value = ""
-          }
+          
 
 
     })
